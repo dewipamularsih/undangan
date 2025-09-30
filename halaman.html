@@ -1201,7 +1201,19 @@ body {
   color: #000;        /* warna hitam elegan */
   margin-bottom: 20px;
 }
-
+.pembuka {
+    max-width: 700px;
+    width: 90%;
+    margin: 0 auto 40px auto;  /* tengah + jarak bawah */
+    padding: 0 15px;
+    font-size: 1.1rem;
+    line-height: 1.8;          /* spasi antar baris */
+    font-style: italic;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    white-space: pre-line;     /* supaya enter di HTML ikut kebawah */
+    color: #000;               /* atau #fff kalau background gelap */
+  }
 </style>
 </head>
 <body>
@@ -1259,9 +1271,7 @@ body {
     
     <div class="bride-groom-section fade-in">
       <h3 class="bride-groom">Bride & Groom</h3>
-       <p style="max-width:700px; width:90%; margin:0 auto 40px auto; padding:0 15px; 
-font-size:1.1rem; line-height:1.6; font-style:italic; text-align:center; 
-font-family:'Playfair Display',serif; white-space:pre-line;">
+       <p class="pembuka">
          Segala Puji Bagi Allah SWT yang telah menjadikan hambanya hidup berpasang-pasangan. Dengan memohon Ridho, Rahmat, dan Berkah-Nya. Kami bermaksud untuk mengundang Saudara/i dalam acara pernikahan yang kami selenggarakan.
        </p>
     </div>
@@ -1692,6 +1702,7 @@ function copyAccountNew(elementId, btn) {
 </script>
 </body>
 </html>
+
 
 
 
