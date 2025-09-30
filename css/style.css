@@ -1,0 +1,131 @@
+/* Umum */
+body {
+  font-family: "Public Sans", "Noto Sans", sans-serif;
+  background-color: #fdf7fb;
+  color: #1b0e18;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+.header {
+  background-color: #fcf8fb;
+  padding: 20px 40px;
+  border-bottom: 1px solid #e7d0e2;
+}
+
+/* Tombol */
+button,
+.start-button {
+  background-color: #d53fa3;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover,
+.start-button:hover {
+  background-color: #bf2b91;
+}
+
+/* Form URL */
+input[type="text"],
+input[type="url"] {
+  padding: 10px;
+  border: 1px solid #e7d0e2;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+  margin-right: 10px;
+}
+
+/* Tabel */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+}
+
+.table th,
+.table td {
+  padding: 15px 20px;
+  text-align: left;
+  border-bottom: 1px solid #f0e4f1;
+}
+
+.table th {
+  background-color: #fcf8fb;
+  font-weight: bold;
+  color: #1b0e18;
+}
+
+.table td {
+  color: #5f4b61;
+}
+
+.view-report {
+  color: #d53fa3;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.view-report:hover {
+  text-decoration: underline;
+}
+
+/* Judul & Subjudul */
+h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 20px;
+  color: #974e89;
+}
+
+/* Progress bar skor */
+.progress-bar {
+  height: 6px;
+  border-radius: 4px;
+  background-color: #f2e3f0;
+  position: relative;
+}
+
+.progress-bar-fill {
+  background-color: #d53fa3;
+  height: 100%;
+  border-radius: 4px;
+}
+
+/* Bagian bantuan */
+.help-section {
+  background-color: #fff;
+  padding: 30px 40px;
+  border-top: 1px solid #e7d0e2;
+  margin-top: 40px;
+  font-size: 14px;
+  color: #5f4b61;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .table th,
+  .table td {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  input[type="text"] {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  .start-button {
+    width: 100%;
+  }
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Wedding of Tegar & Ifa</title>
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@600&family=Poppins:wght@300;400;600&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      color: white;
+      text-align: center;
+      background: url('img/bunga.jpg') center/cover no-repeat fixed;
+      overflow: hidden; /* cegah scroll */
+      height: 100vh;    /* full 1 layar */
+    }
+
+    .page-container {
+      height: 100vh; /* pas 1 layar, bukan lebih */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around; /* biar ada jarak enak */
+      align-items: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.5);
+      box-sizing: border-box;
+    }
+
+    .small-text {
+      text-transform: uppercase;
+      font-size: 20px;
+      margin-bottom: 5px;
+      letter-spacing: 2px;
+    }
+
+    .big-text {
+      font-size: 65px;
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    .big-text .fancy {
+      font-family: 'Great Vibes', cursive;
+      font-size: 80px;
+    }
+
+    .big-text .normal {
+      font-family: 'Playfair Display', serif;
+    }
+
+    .sub-text {
+      font-size: 18px;
+      margin-bottom: 20px;
+      font-weight: normal;
+      line-height: 1.4;
+    }
+
+    .sub-text b {
+      font-weight: 600;
+    }
+
+    .button {
+      background-color: #e2673d;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 16px;
+      transition: background-color 0.3s;
+      display: inline-block;
+    }
+
+    .button:hover {
+      background-color: #c9542e;
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      .big-text {
+        font-size: 40px;
+      }
+      .big-text .fancy {
+        font-size: 50px;
+      }
+      .small-text {
+        font-size: 16px;
+      }
+      .sub-text {
+        font-size: 16px;
+      }
+      .button {
+        font-size: 14px;
+        padding: 10px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-container">
+    <!-- Bagian atas -->
+    <div class="top-content">
+      <div class="small-text">THE WEDDING OF</div>
+      <div class="big-text">
+        <span class="fancy">T</span><span class="normal">egar</span> &nbsp;
+        <span class="fancy">I</span><span class="normal">fa</span>
+      </div>
+    </div>
+
+    <!-- Bagian bawah -->
+    <div class="bottom-content">
+      <div class="sub-text">
+        Kepada Yth.<br />
+        <b id="namaTamu">Tamu Undangan</b>
+      </div>
+      <a id="bukaUndangan" href="halaman.html" class="button">Buka Undangan</a>
+    </div>
+  </div>
+
+  <script>
+    // Ambil parameter nama di URL
+    const params = new URLSearchParams(window.location.search);
+    const nama = params.get("nama"); 
+
+    // Tampilkan nama jika ada, kalau tidak default
+    const namaTamuEl = document.getElementById("namaTamu");
+    if (nama) {
+      namaTamuEl.textContent = nama;
+    } else {
+      namaTamuEl.textContent = "Tamu Undangan";
+    }
+
+    // Update link tombol agar kirim nama juga
+    const tombol = document.getElementById("bukaUndangan");
+    if (nama) {
+      tombol.href = "halaman.html?nama=" + encodeURIComponent(nama);
+    }
+  </script>
+</body>
+</html>
