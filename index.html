@@ -10,44 +10,64 @@
     rel="stylesheet"
   />
   <style>
-    html, body {
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: 'Poppins', sans-serif;
       color: white;
       text-align: center;
       background: url('img/bunga.jpg') center/cover no-repeat fixed;
-      overflow: hidden; /* cegah scroll */
-      height: 100vh;    /* full 1 layar */
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Overlay gradasi agar lebih elegan */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.5));
+      z-index: 0;
     }
 
     .page-container {
-      height: 100vh; /* pas 1 layar, bukan lebih */
+      position: relative;
+      z-index: 1;
+      height: 100%;
       display: flex;
       flex-direction: column;
-      justify-content: space-around; /* biar ada jarak enak */
+      justify-content: space-between;
       align-items: center;
-      padding: 20px;
-      background: rgba(0, 0, 0, 0.5);
-      box-sizing: border-box;
+      padding: 50px 20px;
+      animation: fadeIn 1.5s ease-in-out;
     }
 
     .small-text {
       text-transform: uppercase;
       font-size: 20px;
-      margin-bottom: 5px;
-      letter-spacing: 2px;
+      letter-spacing: 4px;
+      color: #f9d89c; /* sentuhan gold */
+      margin-bottom: 10px;
     }
 
     .big-text {
-      font-size: 65px;
+      font-size: 70px;
       margin: 0;
       line-height: 1.2;
+      color: #fff;
     }
 
     .big-text .fancy {
       font-family: 'Great Vibes', cursive;
-      font-size: 80px;
+      font-size: 90px;
+      color: #f9d89c;
     }
 
     .big-text .normal {
@@ -56,43 +76,55 @@
 
     .sub-text {
       font-size: 18px;
-      margin-bottom: 20px;
-      font-weight: normal;
-      line-height: 1.4;
+      margin-bottom: 25px;
+      font-weight: 300;
+      line-height: 1.5;
+      color: #eee;
     }
 
     .sub-text b {
       font-weight: 600;
+      color: #fff;
     }
 
     .button {
-      background-color: #e2673d;
-      color: white;
-      padding: 12px 25px;
-      border-radius: 5px;
+      background: linear-gradient(45deg, #f9d89c, #d4af37);
+      color: #111;
+      padding: 14px 30px;
+      border-radius: 30px;
       text-decoration: none;
       font-size: 16px;
-      transition: background-color 0.3s;
+      font-weight: 600;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
       display: inline-block;
     }
 
     .button:hover {
-      background-color: #c9542e;
+      background: linear-gradient(45deg, #d4af37, #f1c27d);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+    }
+
+    /* Animasi masuk */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     /* Responsive */
     @media (max-width: 480px) {
       .big-text {
-        font-size: 40px;
+        font-size: 42px;
       }
       .big-text .fancy {
-        font-size: 50px;
+        font-size: 58px;
       }
       .small-text {
-        font-size: 16px;
+        font-size: 14px;
       }
       .sub-text {
-        font-size: 16px;
+        font-size: 15px;
       }
       .button {
         font-size: 14px;
@@ -105,7 +137,7 @@
   <div class="page-container">
     <!-- Bagian atas -->
     <div class="top-content">
-      <div class="small-text">THE WEDDING OF</div>
+      <div class="small-text">The Wedding Of</div>
       <div class="big-text">
         <span class="fancy">T</span><span class="normal">egar</span> &nbsp;
         <span class="fancy">I</span><span class="normal">fa</span>
