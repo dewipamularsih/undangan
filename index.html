@@ -25,9 +25,10 @@
       height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: center;   /* semua konten di tengah */
       align-items: center;
-      padding: 40px 20px 80px 20px; /* padding bawah ditambah biar konten agak naik */
+      gap: 30px; /* jarak antar bagian */
+      padding: 20px;
       background: rgba(0,0,0,0.5);
       box-sizing: border-box;
     }
@@ -56,10 +57,6 @@
       font-family: 'Playfair Display', serif;
     }
 
-    .bottom-content {
-      transform: translateY(-40px); /* geser tombol + teks naik */
-    }
-
     .sub-text {
       font-size: 18px;
       margin-bottom: 20px;
@@ -81,6 +78,7 @@
       font-weight: 600;
       box-shadow: 0 4px 10px rgba(0,0,0,0.3);
       transition: all 0.3s ease;
+      display: inline-block;
     }
 
     .button:hover {
@@ -96,13 +94,12 @@
       .small-text { font-size: 14px; }
       .sub-text { font-size: 15px; }
       .button { font-size: 14px; padding: 10px 20px; }
-      .bottom-content { transform: translateY(-25px); } /* di HP naik secukupnya */
     }
   </style>
 </head>
 <body>
   <div class="page-container">
-    <!-- Bagian atas -->
+    <!-- Judul -->
     <div class="top-content">
       <div class="small-text">THE WEDDING OF</div>
       <div class="big-text">
@@ -111,7 +108,7 @@
       </div>
     </div>
 
-    <!-- Bagian bawah -->
+    <!-- Nama Tamu + Tombol -->
     <div class="bottom-content">
       <div class="sub-text">
         Kepada Yth.<br />
