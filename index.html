@@ -10,63 +10,45 @@
     rel="stylesheet"
   />
   <style>
-    * {
+    html, body {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-
-    html, body {
-      height: 100%;
-      overflow: hidden; /* cegah scroll */
       font-family: 'Poppins', sans-serif;
-      background: url('img/bunga.jpg') center/cover no-repeat fixed;
-      position: relative;
       color: white;
-    }
-
-    body::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.5));
-      z-index: 0;
+      text-align: center;
+      background: url('img/bunga.jpg') center/cover no-repeat fixed;
+      overflow: hidden;   /* cegah scroll */
+      height: 100vh;      /* pas 1 layar */
     }
 
     .page-container {
-      position: relative;
-      z-index: 1;
       height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: center; /* fokus di tengah */
+      justify-content: space-between;
       align-items: center;
-      padding: 40px 20px;
-      text-align: center;
-      animation: fadeIn 1.5s ease-in-out;
-    }
-
-    .top-content {
-      margin-bottom: 40px; /* kasih jarak biar tombol naik */
+      padding: 40px 20px 80px 20px; /* padding bawah ditambah biar konten agak naik */
+      background: rgba(0,0,0,0.5);
+      box-sizing: border-box;
     }
 
     .small-text {
       text-transform: uppercase;
-      font-size: 18px;
-      letter-spacing: 4px;
+      font-size: 20px;
+      margin-bottom: 5px;
+      letter-spacing: 2px;
       color: #f9d89c;
     }
 
     .big-text {
-      font-size: 70px;
+      font-size: 65px;
+      margin: 0;
       line-height: 1.2;
-      margin-top: 10px;
     }
 
     .big-text .fancy {
       font-family: 'Great Vibes', cursive;
-      font-size: 90px;
+      font-size: 80px;
       color: #f9d89c;
     }
 
@@ -74,29 +56,31 @@
       font-family: 'Playfair Display', serif;
     }
 
+    .bottom-content {
+      transform: translateY(-40px); /* geser tombol + teks naik */
+    }
+
     .sub-text {
       font-size: 18px;
-      font-weight: 300;
-      line-height: 1.5;
-      margin-bottom: 15px; /* jarak kecil biar tombol naik */
+      margin-bottom: 20px;
+      font-weight: normal;
+      line-height: 1.4;
     }
 
     .sub-text b {
       font-weight: 600;
-      color: #fff;
     }
 
     .button {
       background: linear-gradient(45deg, #f9d89c, #d4af37);
       color: #111;
-      padding: 14px 32px;
+      padding: 12px 28px;
       border-radius: 30px;
       text-decoration: none;
       font-size: 16px;
       font-weight: 600;
       box-shadow: 0 4px 10px rgba(0,0,0,0.3);
       transition: all 0.3s ease;
-      display: inline-block;
     }
 
     .button:hover {
@@ -105,17 +89,14 @@
       box-shadow: 0 6px 15px rgba(0,0,0,0.4);
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
+    /* Responsive */
     @media (max-width: 480px) {
-      .big-text { font-size: 42px; }
-      .big-text .fancy { font-size: 58px; }
+      .big-text { font-size: 40px; }
+      .big-text .fancy { font-size: 55px; }
       .small-text { font-size: 14px; }
       .sub-text { font-size: 15px; }
       .button { font-size: 14px; padding: 10px 20px; }
+      .bottom-content { transform: translateY(-25px); } /* di HP naik secukupnya */
     }
   </style>
 </head>
@@ -123,7 +104,7 @@
   <div class="page-container">
     <!-- Bagian atas -->
     <div class="top-content">
-      <div class="small-text">The Wedding Of</div>
+      <div class="small-text">THE WEDDING OF</div>
       <div class="big-text">
         <span class="fancy">T</span><span class="normal">egar</span> &nbsp;
         <span class="fancy">I</span><span class="normal">fa</span>
@@ -144,11 +125,9 @@
     const params = new URLSearchParams(window.location.search);
     const nama = params.get("nama"); 
     const namaTamuEl = document.getElementById("namaTamu");
-    const tombol = document.getElementById("bukaUndangan");
-
     if (nama) {
       namaTamuEl.textContent = nama;
-      tombol.href = "halaman.html?nama=" + encodeURIComponent(nama);
+      document.getElementById("bukaUndangan").href = "halaman.html?nama=" + encodeURIComponent(nama);
     }
   </script>
 </body>
