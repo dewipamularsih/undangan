@@ -25,7 +25,6 @@
       color: white;
     }
 
-    /* Overlay gradasi */
     body::before {
       content: "";
       position: absolute;
@@ -38,14 +37,18 @@
     .page-container {
       position: relative;
       z-index: 1;
-      height: 100vh; /* penuh 1 layar */
+      height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: center; /* fokus di tengah */
       align-items: center;
       padding: 40px 20px;
       text-align: center;
       animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .top-content {
+      margin-bottom: 40px; /* kasih jarak biar tombol naik */
     }
 
     .small-text {
@@ -75,7 +78,7 @@
       font-size: 18px;
       font-weight: 300;
       line-height: 1.5;
-      margin-bottom: 25px;
+      margin-bottom: 15px; /* jarak kecil biar tombol naik */
     }
 
     .sub-text b {
@@ -93,6 +96,7 @@
       font-weight: 600;
       box-shadow: 0 4px 10px rgba(0,0,0,0.3);
       transition: all 0.3s ease;
+      display: inline-block;
     }
 
     .button:hover {
@@ -106,31 +110,19 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Responsive */
     @media (max-width: 480px) {
-      .big-text {
-        font-size: 42px;
-      }
-      .big-text .fancy {
-        font-size: 58px;
-      }
-      .small-text {
-        font-size: 14px;
-      }
-      .sub-text {
-        font-size: 15px;
-      }
-      .button {
-        font-size: 14px;
-        padding: 10px 20px;
-      }
+      .big-text { font-size: 42px; }
+      .big-text .fancy { font-size: 58px; }
+      .small-text { font-size: 14px; }
+      .sub-text { font-size: 15px; }
+      .button { font-size: 14px; padding: 10px 20px; }
     }
   </style>
 </head>
 <body>
   <div class="page-container">
     <!-- Bagian atas -->
-    <div>
+    <div class="top-content">
       <div class="small-text">The Wedding Of</div>
       <div class="big-text">
         <span class="fancy">T</span><span class="normal">egar</span> &nbsp;
@@ -139,7 +131,7 @@
     </div>
 
     <!-- Bagian bawah -->
-    <div>
+    <div class="bottom-content">
       <div class="sub-text">
         Kepada Yth.<br />
         <b id="namaTamu">Tamu Undangan</b>
